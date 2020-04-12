@@ -15,7 +15,9 @@ class QuestionsController extends AbstractController
      */
     public function homepage()
     {
-        return new Response('What a bewitching controller we have conjured!');
+        return $this->render('question/homepage.html.twig', [
+        
+        ]);
     }
     
     /**
@@ -28,6 +30,7 @@ class QuestionsController extends AbstractController
             'Make sure your cat sleep... 😃',
             'Honestly... '
         ];
+        dump($slug, $answers, $this);
         
         return $this->render('question/show.html.twig', [
         'question' => ucwords(str_replace("-", " ", $slug)),
