@@ -23,8 +23,15 @@ class QuestionsController extends AbstractController
      */
     public function show($slug)
     {
-        return new Response(sprintf('My own question "%s"',
-        ucwords(str_replace("-", " ", $slug))
-        ));
+        $answers = [
+            'dddd',
+            'Make sure your cat sleep... 😃',
+            'Honestly... '
+        ];
+        
+        return $this->render('question/show.html.twig', [
+        'question' => ucwords(str_replace("-", " ", $slug)),
+            'answers' => $answers
+        ]);
     }
 }
