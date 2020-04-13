@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionsController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_home")
      */
     public function homepage()
     {
@@ -21,7 +21,7 @@ class QuestionsController extends AbstractController
     }
     
     /**
-     * @Route("/questions/{slug}")
+     * @Route("/questions/{slug}", name="app_question_show")
      */
     public function show($slug)
     {
